@@ -7,6 +7,8 @@ export var acceleration = 3
 export var decceleration = 5
 export var sprintMultiplier = 2
 export var sprintEnergyConsumption = 0.3
+export var jumpEnergyConsumption = 0.25
+export var jumpAcceleration = 250
 export var energyRegen = 0.1
 
 var anim
@@ -14,12 +16,13 @@ var sprintEnergy = 1.0
 var velocity = Vector3()
 var energy = 1
 
+
 func _ready():
 	$Camera.make_current()
 	anim = get_parent().get_node("AnimationPlayer")
 
 
-func _physics_process(delta):
+func movement(delta):
 	var dir = Vector3()
 	var multiplier = 1
 	var consumingEnergy = false
@@ -44,6 +47,9 @@ func _physics_process(delta):
 	dir = dir.normalized()
 
 	velocity.y += delta * gravity
+	if is_on_floor() && Input.is_action_just_pressed("jump") && energy >= jumpEnergyConsumption:
+		velocity.y = jumpAcceleration * delta
+		energy -= jumpEnergyConsumption
 
 	var hv = velocity
 	hv.y = 0
@@ -71,3 +77,8 @@ func _physics_process(delta):
 		energy = min(1.0, energy + delta*energyRegen)
 	else:
 		energy = max(0.0, energy)
+
+
+func _physics_process(delta):
+	if GameVariables.gameState == GameVariables.GAMESTATE.running:
+		movement(delta)
