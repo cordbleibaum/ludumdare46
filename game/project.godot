@@ -19,6 +19,10 @@ config/name="LudumDare46"
 run/main_scene="res://TestScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameVariables="*res://GameVariables.gd"
+
 [input]
 
 move_forward={
