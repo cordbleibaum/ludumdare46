@@ -16,12 +16,13 @@ var sprintEnergy = 1.0
 var velocity = Vector3()
 var energy = 1
 
+
 func _ready():
 	$Camera.make_current()
 	anim = get_parent().get_node("AnimationPlayer")
 
 
-func _physics_process(delta):
+func movement(delta):
 	var dir = Vector3()
 	var multiplier = 1
 	var consumingEnergy = false
@@ -76,3 +77,8 @@ func _physics_process(delta):
 		energy = min(1.0, energy + delta*energyRegen)
 	else:
 		energy = max(0.0, energy)
+
+
+func _physics_process(delta):
+	if GameVariables.gameState == GameVariables.GAMESTATE.running:
+		movement(delta)
