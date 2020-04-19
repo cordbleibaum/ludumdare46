@@ -7,62 +7,6 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "ikStart"
-tracks/0/type = "method"
-tracks/0/path = NodePath("snakeArmature/Skeleton/SkeletonIK")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "start"
-} ]
-}
-tracks/1/type = "method"
-tracks/1/path = NodePath("snakeArmature/Skeleton/SkeletonIK2")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "start"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("snakeArmature/Skeleton/SkeletonIK3")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "start"
-} ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath("snakeArmature/Skeleton/SkeletonIK4")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [ false ],
-"method": "start"
-} ]
-}
 
 [node name="snake" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -82,45 +26,6 @@ transform = Transform( 0.976448, -0.215752, -2.95915e-07, -7.87899e-07, -2.19047
 
 [node name="snake" parent="snakeArmature/Skeleton" index="2"]
 material/0 = ExtResource( 3 )
-
-[node name="SkeletonIK" type="SkeletonIK" parent="snakeArmature/Skeleton" index="3"]
-process_priority = 1
-root_bone = "spine_0"
-tip_bone = "spine_3"
-use_magnet = true
-magnet = Vector3( 0.1, 0, 0.1 )
-target_node = NodePath("../ikHandle1")
-
-[node name="SkeletonIK2" type="SkeletonIK" parent="snakeArmature/Skeleton" index="4"]
-process_priority = 1
-root_bone = "spine_3"
-tip_bone = "spine_5"
-target_node = NodePath("../ikHandle2")
-
-[node name="SkeletonIK3" type="SkeletonIK" parent="snakeArmature/Skeleton" index="5"]
-process_priority = 1
-root_bone = "spine_5"
-tip_bone = "spine_8"
-target_node = NodePath("../ikHandle3")
-
-[node name="SkeletonIK4" type="SkeletonIK" parent="snakeArmature/Skeleton" index="6"]
-process_priority = 1
-root_bone = "spine_8"
-tip_bone = "spine_13"
-use_magnet = true
-target_node = NodePath("../ikHandle4")
-
-[node name="ikHandle1" type="Spatial" parent="snakeArmature/Skeleton" index="7"]
-transform = Transform( 1, 0, 0, 0, 0.0210819, 0.999778, 0, -0.999778, 0.0210819, 0, 0, -0.408814 )
-
-[node name="ikHandle2" type="Spatial" parent="snakeArmature/Skeleton" index="8"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, -0.676986 )
-
-[node name="ikHandle3" type="Spatial" parent="snakeArmature/Skeleton" index="9"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, -1.05584 )
-
-[node name="ikHandle4" type="Spatial" parent="snakeArmature/Skeleton" index="10"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, -1.8057 )
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "ikStart"
