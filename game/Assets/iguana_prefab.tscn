@@ -1211,6 +1211,9 @@ anims/walk = SubResource( 4 )
 
 [node name="Iguarmature" type="KinematicBody" parent="."]
 script = ExtResource( 2 )
+acceleration = 8
+decceleration = 12
+sprintMultiplier = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Iguarmature"]
 shape = SubResource( 5 )
