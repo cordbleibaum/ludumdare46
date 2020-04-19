@@ -7,6 +7,8 @@ export var acceleration = 3
 export var decceleration = 5
 export var sprintMultiplier = 2
 export var sprintEnergyConsumption = 0.3
+export var jumpEnergyConsumption = 0.25
+export var jumpAcceleration = 250
 export var energyRegen = 0.1
 
 var anim
@@ -44,6 +46,9 @@ func _physics_process(delta):
 	dir = dir.normalized()
 
 	velocity.y += delta * gravity
+	if is_on_floor() && Input.is_action_just_pressed("jump") && energy >= jumpEnergyConsumption:
+		velocity.y = jumpAcceleration * delta
+		energy -= jumpEnergyConsumption
 
 	var hv = velocity
 	hv.y = 0
