@@ -7,12 +7,10 @@
 script = ExtResource( 2 )
 
 [node name="Skeleton" parent="snakeArmature" index="0"]
-bones/2/bound_children = [ NodePath("BoneAttachment") ]
-bones/3/bound_children = [ NodePath("BoneAttachment 2") ]
 bones/18/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, 0 )
 
 [node name="BoneAttachment" parent="snakeArmature/Skeleton" index="0"]
-transform = Transform( 0.976448, 0.215752, 4.69121e-07, 9.6485e-07, -2.19792e-06, -0.999936, -0.215752, 0.976448, 6.67572e-06, 0.0210145, 0.0130202, 0.0464976 )
+transform = Transform( 0.976448, 0.215752, 4.65907e-07, 9.62988e-07, -2.21282e-06, -0.999936, -0.215752, 0.976448, 6.66082e-06, 0.0210145, 0.0130202, 0.0464976 )
 
 [node name="BoneAttachment 2" parent="snakeArmature/Skeleton" index="1"]
-transform = Transform( 0.976448, -0.215752, -2.96128e-07, -7.91624e-07, -2.19792e-06, -0.999936, 0.215752, 0.976448, 6.70552e-06, -0.0210145, 0.0130202, 0.0464976 )
+transform = Transform( 0.976448, -0.215752, -2.95915e-07, -7.87899e-07, -2.19047e-06, -0.999936, 0.215752, 0.976448, 6.71297e-06, -0.0210145, 0.0130202, 0.0464976 )
