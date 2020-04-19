@@ -5,8 +5,8 @@ var velocity = Vector3()
 
 
 export var walkSpeed = 6
-export var ACCELERATION = 3
-export var DE_ACCELERATION = 5
+export var acceleration = 3
+export var decceleration = 5
 
 var anim
 
@@ -36,10 +36,10 @@ func _physics_process(delta):
 	hv.y = 0
 
 	var new_pos = dir * walkSpeed
-	var accel = DE_ACCELERATION
+	var accel = decceleration
 
 	if (dir.dot(hv) > 0):
-		accel = ACCELERATION
+		accel = acceleration
 		
 	if hv.dot(hv) > 0.1:
 		if(not anim.is_playing()):
