@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Materials/rockDiff.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Materials/rockNormals.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Materials/rockRoughness.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+resource_name = "objectSpaceNormals"
+code = "shader_type spatial;
+
+uniform sampler2D color;
+uniform sampler2D roughness;
+uniform sampler2D uNormal;
+
+uniform float useNormals;
+
+void vertex() {
+	UV.x = VERTEX.x / 10.0;
+	UV.y = (VERTEX.y + VERTEX.z) / 10.0;
+}
+
+void fragment() {
+	ALBEDO = texture(color, UV).rgb;
+	ROUGHNESS = texture(roughness, UV).r;
+	vec3 normal = texture(uNormal, UV).rgb * 2.0 - 1.0;
+	float y = normal.y;
+	normal.y = -normal.z;
+	normal.z = y;
+	NORMAL = (1.0 - useNormals) * NORMAL  + ((WORLD_MATRIX * vec4(normal, 0.0)).rgb) * useNormals;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/useNormals = 1.0
+shader_param/color = ExtResource( 1 )
+shader_param/roughness = ExtResource( 3 )
+shader_param/uNormal = ExtResource( 2 )
