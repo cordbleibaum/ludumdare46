@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/iguana_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/WinningArea.gd" type="Script" id=2]
@@ -11,23 +11,12 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 50, 1, 1 )
 
+[sub_resource type="NavigationMesh" id=2]
+
 [node name="Spatial" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33.6414 )
-
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14888, 6.24517 )
-use_collision = true
-width = 400.0
-depth = 100.0
-
-[node name="CSGBox" type="CSGBox" parent="CSGBox"]
-transform = Transform( 1, 0, 0, 0, 0.969965, -0.243243, 0, 0.243243, 0.969965, 0, 1.25701, 41.1245 )
-operation = 2
-width = 500.0
-height = 4.0
-depth = 20.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.346215, 0.938155, 0, -0.938155, -0.346215, 0.302422, 10.1927, -0.353454 )
@@ -58,107 +47,6 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97806, 0.766434, 18.4601 )
 shape = SubResource( 1 )
 
-[node name="Environment" type="Spatial" parent="."]
-
-[node name="Palmtree" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61317, -0.225305, -2.9539 )
-
-[node name="Palmtree7" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6477, -0.225305, -27.7935 )
-
-[node name="Palmtree2" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -9.90811, -0.0881631, -3.70795 )
-
-[node name="Palmtree6" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -8.44807, -0.225302, -19.4723 )
-
-[node name="Palmtree12" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -63.4758, -0.225302, -25.0702 )
-
-[node name="Palmtree3" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 11.8468, -0.225303, -1.14617 )
-
-[node name="Palmtree8" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, 28.6136, -0.225306, -0.793741 )
-
-[node name="Palmtree13" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, -73.3438, -0.225306, -13.9816 )
-
-[node name="Palmtree10" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( -0.68937, 0, -1.3322, 0, 1.5, 0, 1.3322, 0, -0.68937, -27.3751, -0.225306, -8.7555 )
-
-[node name="Palmtree11" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( -0.919161, 0, -1.77627, 0, 2, 0, 1.77627, 0, -0.919161, -75.7783, -0.225304, 6.33542 )
-
-[node name="Palmtree4" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, -4.03317, -0.225303, 6.18687 )
-
-[node name="Palmtree5" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 12.9736, -0.225303, -18.1191 )
-
-[node name="Palmtree9" parent="Environment" instance=ExtResource( 3 )]
-transform = Transform( -0.555237, 0, -0.831692, 0, 1, 0, 0.831692, 0, -0.555237, 29.9644, -0.225303, -17.1657 )
-
-[node name="Rocks" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3225, -0.210316, -10.9 )
-
-[node name="Rocks2" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 0.553028, 0, -0.833163, 0, 1, 0, 0.833163, 0, 0.553028, 9.09081, -0.210314, 21.5946 )
-
-[node name="Rocks3" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( -0.811666, 0, -0.584122, 0, 1, 0, 0.584122, 0, -0.811666, -14.577, -0.210314, 21.5946 )
-
-[node name="Rocks4" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 5.43209, -0.210314, -10.8096 )
-
-[node name="Rocks5" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 0.0230039, 0, 1.99987, 0, 2, 0, -1.99987, 0, 0.0230039, 5.96921, -0.210309, 12.3633 )
-
-[node name="Rocks6" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 0.0575098, 0, 4.99967, 0, 5, 0, -4.99967, 0, 0.0575098, 72.9025, -0.551015, -24.5187 )
-
-[node name="Rocks7" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( -4.98198, 0, -0.424127, 0, 5, 0, 0.424127, 0, -4.98198, -50.8255, -0.609678, -6.01923 )
-
-[node name="Plateau" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.581666, -0.289103, -27.6682 )
-
-[node name="Plateau2" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 6.86618, -0.289103, -22.9409 )
-
-[node name="Plateau7" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( 9.4626, 0, -3.23406, 0, 10, 0, 3.23406, 0, 9.4626, 0, 0, -53.0523 )
-
-[node name="Plateau11" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( -9.93584, 0, 1.13099, 0, 10, 0, -1.13099, 0, -9.93584, -32.2575, 0, -53.0523 )
-
-[node name="Plateau8" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( 9.99937, 0, 0.112222, 0, 10, 0, -0.112222, 0, 9.99937, 25.0682, 0, -55.4231 )
-
-[node name="Plateau9" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( 9.51143, 0, -3.08751, 0, 10, 0, 3.08751, 0, 9.51143, 44.5695, 0, -55.4941 )
-
-[node name="Plateau10" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( 7.12602, 0, 7.01569, 0, 10, 0, -7.01569, 0, 7.12602, 67.2375, 0, -50.5878 )
-
-[node name="Plateau6" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( -2.73183, 0, 1.23979, 0, 3, 0, -1.23979, 0, -2.73183, -16.983, -0.289102, 2.04032 )
-
-[node name="Plateau5" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( -1.82122, 0, 0.826528, 0, 2, 0, -0.826528, 0, -1.82122, 13.7876, -0.34699, 10.3324 )
-
-[node name="Plateau3" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( -0.263654, 0, 0.964617, 0, 1, 0, -0.964617, 0, -0.263654, -3.44582, -0.289104, -17.4107 )
-
-[node name="Plateau4" parent="Environment" instance=ExtResource( 5 )]
-transform = Transform( 0.868139, 0, 0.496322, 0, 1, 0, -0.496322, 0, 0.868139, -21.2909, -0.289104, 8.56355 )
-
-[node name="Stone" parent="Environment" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45387, -0.167807, 26.4287 )
-
-[node name="Stone2" parent="Environment" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2924, -0.167807, 10.9798 )
-
 [node name="MarginCenter" type="MarginContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -180,4 +68,123 @@ custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 2 )
+
+[node name="Environment" type="Spatial" parent="Navigation/NavigationMeshInstance"]
+
+[node name="Palmtree" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61317, -0.225305, -2.9539 )
+
+[node name="Palmtree7" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6477, -0.225305, -27.7935 )
+
+[node name="Palmtree2" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -9.90811, -0.0881631, -3.70795 )
+
+[node name="Palmtree6" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -8.44807, -0.225302, -19.4723 )
+
+[node name="Palmtree12" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -63.4758, -0.225302, -25.0702 )
+
+[node name="Palmtree3" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 11.8468, -0.225303, -1.14617 )
+
+[node name="Palmtree8" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, 28.6136, -0.225306, -0.793741 )
+
+[node name="Palmtree13" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, -73.3438, -0.225306, -13.9816 )
+
+[node name="Palmtree10" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( -0.68937, 0, -1.3322, 0, 1.5, 0, 1.3322, 0, -0.68937, -27.3751, -0.225306, -8.7555 )
+
+[node name="Palmtree11" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( -0.919161, 0, -1.77627, 0, 2, 0, 1.77627, 0, -0.919161, -75.7783, -0.225304, 6.33542 )
+
+[node name="Palmtree4" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, -4.03317, -0.225303, 6.18687 )
+
+[node name="Palmtree5" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 12.9736, -0.225303, -18.1191 )
+
+[node name="Palmtree9" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 3 )]
+transform = Transform( -0.555237, 0, -0.831692, 0, 1, 0, 0.831692, 0, -0.555237, 29.9644, -0.225303, -17.1657 )
+
+[node name="Rocks" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3225, -0.210316, -10.9 )
+
+[node name="Rocks2" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( 0.553028, 0, -0.833163, 0, 1, 0, 0.833163, 0, 0.553028, 9.09081, -0.210314, 21.5946 )
+
+[node name="Rocks3" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( -0.811666, 0, -0.584122, 0, 1, 0, 0.584122, 0, -0.811666, -14.577, -0.210314, 21.5946 )
+
+[node name="Rocks4" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 5.43209, -0.210314, -10.8096 )
+
+[node name="Rocks5" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( 0.0230039, 0, 1.99987, 0, 2, 0, -1.99987, 0, 0.0230039, 5.96921, -0.210309, 12.3633 )
+
+[node name="Rocks6" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( 0.0575098, 0, 4.99967, 0, 5, 0, -4.99967, 0, 0.0575098, 72.9025, -0.551015, -24.5187 )
+
+[node name="Rocks7" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( -4.98198, 0, -0.424127, 0, 5, 0, 0.424127, 0, -4.98198, -50.8255, -0.609678, -6.01923 )
+
+[node name="Plateau" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.581666, -0.289103, -27.6682 )
+
+[node name="Plateau2" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 6.86618, -0.289103, -22.9409 )
+
+[node name="Plateau7" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( 9.4626, 0, -3.23406, 0, 10, 0, 3.23406, 0, 9.4626, 0, 0, -53.0523 )
+
+[node name="Plateau11" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( -9.93584, 0, 1.13099, 0, 10, 0, -1.13099, 0, -9.93584, -32.2575, 0, -53.0523 )
+
+[node name="Plateau8" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( 9.99937, 0, 0.112222, 0, 10, 0, -0.112222, 0, 9.99937, 25.0682, 0, -55.4231 )
+
+[node name="Plateau9" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( 9.51143, 0, -3.08751, 0, 10, 0, 3.08751, 0, 9.51143, 44.5695, 0, -55.4941 )
+
+[node name="Plateau10" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( 7.12602, 0, 7.01569, 0, 10, 0, -7.01569, 0, 7.12602, 67.2375, 0, -50.5878 )
+
+[node name="Plateau6" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( -2.73183, 0, 1.23979, 0, 3, 0, -1.23979, 0, -2.73183, -16.983, -0.289102, 2.04032 )
+
+[node name="Plateau5" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( -1.82122, 0, 0.826528, 0, 2, 0, -0.826528, 0, -1.82122, 13.7876, -0.34699, 10.3324 )
+
+[node name="Plateau3" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( -0.263654, 0, 0.964617, 0, 1, 0, -0.964617, 0, -0.263654, -3.44582, -0.289104, -17.4107 )
+
+[node name="Plateau4" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 5 )]
+transform = Transform( 0.868139, 0, 0.496322, 0, 1, 0, -0.496322, 0, 0.868139, -21.2909, -0.289104, 8.56355 )
+
+[node name="Stone" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45387, -0.167807, 26.4287 )
+
+[node name="Stone2" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2924, -0.167807, 10.9798 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14888, 6.24517 )
+use_collision = true
+width = 400.0
+depth = 100.0
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/Environment/CSGBox"]
+transform = Transform( 1, 0, 0, 0, 0.969965, -0.243243, 0, 0.243243, 0.969965, 0, 1.25701, 41.1245 )
+operation = 2
+width = 500.0
+height = 4.0
+depth = 20.0
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]
