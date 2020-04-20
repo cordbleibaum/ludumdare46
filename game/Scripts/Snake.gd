@@ -16,6 +16,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	$AnimationPlayer.play("wiggle")
+	
 	if GameVariables.gameState == GameVariables.GAMESTATE.running:
 		var path = nav.get_simple_path(self.get_translation()+Vector3(0,0.5,0), player.get_translation())
 		
