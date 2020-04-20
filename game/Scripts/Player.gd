@@ -67,6 +67,8 @@ func movement(delta):
 		velocity.y = jumpAcceleration * delta
 		energy -= jumpEnergyConsumption
 		anim.play("jump")	
+		
+		get_parent().get_node("JumpPlayer").play()
 
 	var hv = velocity
 	hv.y = 0

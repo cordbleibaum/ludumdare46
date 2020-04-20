@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Prefabs/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/WinningArea.gd" type="Script" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Prefabs/Snake.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Materials/Beach.tres" type="Material" id=9]
 [ext_resource path="res://Materials/Ocean.tres" type="Material" id=10]
+[ext_resource path="res://Sounds/Jump.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sounds/Hit.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sounds/Win.wav" type="AudioStream" id=13]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 100, 1, 1 )
@@ -22,8 +25,8 @@ agent/max_climb = 0.1
 
 [sub_resource type="PlaneMesh" id=3]
 material = ExtResource( 10 )
-size = Vector2( 225, 225 )
-subdivide_width = 128
+size = Vector2( 225, 100 )
+subdivide_width = 256
 subdivide_depth = 128
 
 [node name="Spatial" type="Spatial"]
@@ -413,7 +416,7 @@ transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 4
 speed = 7
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.944099, 143.655 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.944099, 92.2324 )
 mesh = SubResource( 3 )
 material/0 = ExtResource( 10 )
 
@@ -435,4 +438,16 @@ custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "32s"
 align = 1
+
+[node name="JumpPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 512, 300 )
+stream = ExtResource( 11 )
+
+[node name="HitPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 512, 300 )
+stream = ExtResource( 12 )
+
+[node name="WinPlayer" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 512, 300 )
+stream = ExtResource( 13 )
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]
