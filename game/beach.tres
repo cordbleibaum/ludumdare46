@@ -5,8 +5,13 @@
 [ext_resource path="res://Assets/Materials/beachRoughness.png" type="Texture" id=3]
 
 [resource]
+flags_world_triplanar = true
 albedo_texture = ExtResource( 2 )
 roughness_texture = ExtResource( 3 )
 normal_enabled = true
 normal_scale = 0.75
 normal_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.25, 0.25, 0.25 )
+uv1_triplanar = true
+uv2_scale = Vector3( 0.25, 0.25, 0.25 )
+uv2_triplanar = true

@@ -2,7 +2,7 @@ extends KinematicBody
 
 export var gravity = -9.8
 export var rotationSpeed = 3
-export var walkSpeed = 6
+export var walkSpeed = 6.0
 export var acceleration = 3
 export var decceleration = 5
 export var sprintMultiplier = 2
