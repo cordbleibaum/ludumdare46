@@ -83,3 +83,5 @@ func movement(delta):
 func _physics_process(delta):
 	if GameVariables.gameState == GameVariables.GAMESTATE.running:
 		movement(delta)
+		
+	get_parent().get_node("MarginContainerEnergy/HBoxContainer/Label").text = str(int(energy*100))+"%"
