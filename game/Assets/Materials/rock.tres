@@ -19,7 +19,7 @@ void fragment() {
 	ROUGHNESS = texture(roughness, UV).r;
 	vec3 normal = texture(uNormal, UV).rgb * 2.0 - 1.0;
 	float y = normal.y;
-	normal.y = -normal.z;
+	normal.y = normal.z;
 	normal.z = y;
 	NORMAL = (1.0 - useNormals) * NORMAL  + ((WORLD_MATRIX * vec4(normal, 0.0)).rgb) * useNormals;
 }"
