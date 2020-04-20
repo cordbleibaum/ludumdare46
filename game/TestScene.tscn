@@ -22,8 +22,8 @@ agent/max_climb = 0.1
 
 [sub_resource type="PlaneMesh" id=3]
 material = ExtResource( 10 )
-size = Vector2( 225, 225 )
-subdivide_width = 128
+size = Vector2( 225, 100 )
+subdivide_width = 256
 subdivide_depth = 128
 
 [node name="Spatial" type="Spatial"]
@@ -413,7 +413,7 @@ transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 4
 speed = 7
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.944099, 143.655 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.944099, 92.2324 )
 mesh = SubResource( 3 )
 material/0 = ExtResource( 10 )
 
