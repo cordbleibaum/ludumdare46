@@ -92,6 +92,21 @@ transform = Transform( -0.811666, 0, -0.584122, 0, 1, 0, 0.584122, 0, -0.811666,
 [node name="Rocks4" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 5.43209, -0.210314, -10.8096 )
 
+[node name="Rocks5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.0230039, 0, 1.99987, 0, 2, 0, -1.99987, 0, 0.0230039, 5.96921, -0.210309, 12.3633 )
+
 [node name="Plateau" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.858579, -0.289103, -27.8911 )
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.581666, -0.289103, -27.6682 )
+
+[node name="Plateau2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 6.86618, -0.289103, -22.9409 )
+
+[node name="Plateau5" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.82122, 0, 0.826528, 0, 2, 0, -0.826528, 0, -1.82122, 13.7876, -0.34699, 10.3324 )
+
+[node name="Plateau3" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.263654, 0, 0.964617, 0, 1, 0, -0.964617, 0, -0.263654, -3.44582, -0.289104, -17.4107 )
+
+[node name="Plateau4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.868139, 0, 0.496322, 0, 1, 0, -0.496322, 0, 0.868139, -21.2909, -0.289104, 8.56355 )
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]
