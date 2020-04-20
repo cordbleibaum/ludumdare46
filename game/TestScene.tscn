@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/iguana_player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/WinningArea.gd" type="Script" id=2]
 [ext_resource path="res://Prefabs/Palmtree.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Prefabs/Rocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prefabs/Plateau.tscn" type="PackedScene" id=5]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 19.3504, 1, 1 )
@@ -87,4 +88,10 @@ transform = Transform( 0.553028, 0, -0.833163, 0, 1, 0, 0.833163, 0, 0.553028, 9
 
 [node name="Rocks3" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.811666, 0, -0.584122, 0, 1, 0, 0.584122, 0, -0.811666, -14.577, -0.210314, 21.5946 )
+
+[node name="Rocks4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 5.43209, -0.210314, -10.8096 )
+
+[node name="Plateau" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.858579, -0.289103, -27.8911 )
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]
