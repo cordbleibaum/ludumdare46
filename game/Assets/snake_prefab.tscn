@@ -1,12 +1,32 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/snake.glb" type="PackedScene" id=1]
 [ext_resource path="res://Assets/snake_prefab.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Materials/ObjectSpaceNormals.tres" type="Material" id=3]
 [ext_resource path="res://Assets/Materials/eyeMaterial.tres" type="Material" id=4]
 
-[sub_resource type="Animation" id=1]
-resource_name = "ikStart"
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "default"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "wiggle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=3]
+advance_condition = "wiggle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=4]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=5]
+states/default/node = SubResource( 1 )
+states/default/position = Vector2( -91, 37 )
+states/wiggle/node = SubResource( 2 )
+states/wiggle/position = Vector2( -125, 171 )
+transitions = [ "default", "wiggle", SubResource( 3 ), "wiggle", "default", SubResource( 4 ) ]
+graph_offset = Vector2( -673, -184.098 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
 
 [node name="snake" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -16,17 +36,20 @@ bones/2/bound_children = [ NodePath("BoneAttachment") ]
 bones/3/bound_children = [ NodePath("BoneAttachment 2") ]
 
 [node name="BoneAttachment" parent="snakeArmature/Skeleton" index="0"]
-transform = Transform( 0.976448, 0.215752, 4.65907e-07, 9.62988e-07, -2.21282e-06, -0.999936, -0.215752, 0.976448, 6.66082e-06, 0.0210145, 0.0130202, 0.0464976 )
+transform = Transform( 0.976448, 0.215752, 4.69121e-07, 9.6485e-07, -2.19792e-06, -0.999936, -0.215752, 0.976448, 6.67572e-06, 0.0210145, 0.0130202, 0.0464976 )
 
 [node name="eyeLeft" parent="snakeArmature/Skeleton/BoneAttachment" index="0"]
 material/0 = ExtResource( 4 )
 
 [node name="BoneAttachment 2" parent="snakeArmature/Skeleton" index="1"]
-transform = Transform( 0.976448, -0.215752, -2.95915e-07, -7.87899e-07, -2.19047e-06, -0.999936, 0.215752, 0.976448, 6.71297e-06, -0.0210145, 0.0130202, 0.0464976 )
+transform = Transform( 0.976448, -0.215752, -2.96128e-07, -7.91624e-07, -2.19792e-06, -0.999936, 0.215752, 0.976448, 6.70552e-06, -0.0210145, 0.0130202, 0.0464976 )
 
 [node name="snake" parent="snakeArmature/Skeleton" index="2"]
 material/0 = ExtResource( 3 )
 
-[node name="AnimationPlayer" parent="." index="1"]
-autoplay = "ikStart"
-anims/ikStart = SubResource( 1 )
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 5 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 6 )
+parameters/conditions/wiggle = false
