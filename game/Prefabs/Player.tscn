@@ -2171,17 +2171,16 @@ tracks/68/imported = false
 tracks/68/enabled = true
 tracks/68/keys = PoolRealArray( 0, 1, 0, 0, 0, 3.07336e-08, -4.65661e-10, 0, 1, 1, 1, 1, 0.0666667, 1, 0, 0, 0, -2.95368e-08, -0.000107479, -0.00345494, 0.999994, 1, 1, 1, 0.133333, 1, 0, 0, 0, -1.247e-07, -0.000819218, -0.0263326, 0.999653, 1, 1, 1, 0.2, 1, 0, 0, 0, -1.68256e-08, -0.00214219, -0.0688565, 0.997624, 1, 1, 1, 0.4, 1, 0, 0, 0, -5.36648e-08, -0.00674557, -0.216823, 0.976188, 1, 1, 1, 0.466667, 1, 0, 0, 0, 3.17409e-08, -0.00754726, -0.242591, 0.970099, 1, 1, 1, 0.533333, 1, 0, 0, 0, -3.21667e-08, -0.00756885, -0.243285, 0.969925, 1, 1, 1, 0.6, 1, 0, 0, 0, -1.10962e-07, -0.00688432, -0.221284, 0.975185, 1, 1, 1, 0.666667, 1, 0, 0, 0, -7.46776e-08, -0.00572771, -0.184106, 0.98289, 1, 1, 1, 0.866667, 1, 0, 0, 0, -9.96859e-09, -0.00136575, -0.0438993, 0.999035, 1, 1, 1, 0.933333, 1, 0, 0, 0, -9.17509e-08, -0.000402854, -0.0129497, 0.999916, 1, 1, 1, 1, 1, 0, 0, 0, 3.07336e-08, -4.65661e-10, 0, 1, 1, 1, 1 )
 
-[node name="iguana" type="Spatial"]
-
-[node name="Iguarmature" type="KinematicBody" parent="."]
-collision_layer = 3
-collision_mask = 3
+[node name="iguana" type="KinematicBody"]
 script = ExtResource( 1 )
-walkSpeed = 5
-sprintMultiplier = 3
 
-[node name="CollisionShape" type="CollisionShape" parent="Iguarmature"]
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 2.56334, -2.41302 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
+
+[node name="Iguarmature" type="Spatial" parent="."]
 
 [node name="Skeleton" type="Skeleton" parent="Iguarmature"]
 bones/0/name = "body_3"
@@ -2534,9 +2533,6 @@ bones/68/bound_children = [  ]
 mesh = SubResource( 2 )
 skin = SubResource( 3 )
 material/0 = null
-
-[node name="Camera" type="Camera" parent="Iguarmature"]
-transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 2.56334, -2.41302 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/jump = SubResource( 4 )

@@ -19,7 +19,7 @@ var energy = 1
 
 func _ready():
 	$Camera.make_current()
-	anim = get_parent().get_node("AnimationPlayer")
+	anim = $AnimationPlayer
 
 
 func movement(delta):

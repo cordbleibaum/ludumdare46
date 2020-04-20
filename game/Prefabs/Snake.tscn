@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/eye.material" type="Material" id=1]
 [ext_resource path="res://Assets/snakeTextures.material" type="Material" id=2]
+[ext_resource path="res://Scripts/Snake.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=7]
 radius = 0.0763253
@@ -573,13 +574,15 @@ tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = PoolRealArray( 0, 1, 0, 0, 0, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.0666667, 1, -0.00198466, -1.55824e-14, 4.73166e-09, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.133333, 1, -0.0160758, -1.26237e-13, 3.83264e-08, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.4, 1, -0.120072, -9.40396e-13, 2.86265e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.466667, 1, -0.134163, -1.05429e-12, 3.1986e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.533333, 1, -0.135261, 4.06786e-13, 3.24592e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.6, 1, -0.128524, 4.2466e-13, 3.24592e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.666667, 1, -0.115978, 4.57856e-13, 3.24592e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 0.733333, 1, -0.0985913, 5.02709e-13, 3.24592e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.4, 1, 0.128524, 1.10489e-12, 3.24591e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.46667, 1, 0.135261, 1.11555e-12, 3.24591e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.53333, 1, 0.134413, 1.12976e-12, 3.20456e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.6, 1, 0.121988, 1.15818e-12, 2.90833e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.66667, 1, 0.10085, 1.21503e-12, 2.40437e-07, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.86667, 1, 0.0238812, 1.41309e-12, 5.69352e-08, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 1.93333, 1, 0.00661565, 1.45683e-12, 1.57724e-08, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1, 2, 1, 0, 0, 0, 4.64481e-27, -8.17124e-14, -5.68434e-14, 1, 1, 1, 1 )
 
-[node name="snake" type="Spatial"]
+[node name="Snake" type="KinematicBody"]
+script = ExtResource( 3 )
 
-[node name="snakeArmature" type="KinematicBody" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="snakeArmature"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0464902, -0.476906 )
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.00348742, 0.0464902, -2.5481e-05 )
 shape = SubResource( 7 )
+
+[node name="snakeArmature" type="Spatial" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0.00348742, 0, -0.476881 )
 
 [node name="Skeleton" type="Skeleton" parent="snakeArmature"]
 bones/0/name = "root_head"
@@ -734,7 +737,7 @@ bones/29/enabled = true
 bones/29/bound_children = [  ]
 
 [node name="BoneAttachment" type="BoneAttachment" parent="snakeArmature/Skeleton"]
-transform = Transform( 0.976448, 0.215752, 4.65907e-07, 9.62988e-07, -2.21282e-06, -0.999936, -0.215752, 0.976448, 6.66082e-06, 0.0210145, 0.0130202, 0.0464976 )
+transform = Transform( 0.976448, 0.215752, 4.69121e-07, 9.6485e-07, -2.19792e-06, -0.999936, -0.215752, 0.976448, 6.67572e-06, 0.0210145, 0.0130202, 0.0464976 )
 bone_name = "eye_l"
 
 [node name="eyeLeft" type="MeshInstance" parent="snakeArmature/Skeleton/BoneAttachment"]
@@ -743,7 +746,7 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="BoneAttachment 2" type="BoneAttachment" parent="snakeArmature/Skeleton"]
-transform = Transform( 0.976448, -0.215752, -2.95915e-07, -7.87899e-07, -2.19047e-06, -0.999936, 0.215752, 0.976448, 6.71297e-06, -0.0210145, 0.0130202, 0.0464976 )
+transform = Transform( 0.976448, -0.215752, -2.96128e-07, -7.91624e-07, -2.19792e-06, -0.999936, 0.215752, 0.976448, 6.70552e-06, -0.0210145, 0.0130202, 0.0464976 )
 bone_name = "eye_r"
 
 [node name="eyeRight" type="MeshInstance" parent="snakeArmature/Skeleton/BoneAttachment 2"]
