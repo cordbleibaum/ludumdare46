@@ -30,6 +30,7 @@ subdivide_depth = 128
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33.6414 )
+sprintEnergyConsumption = 0.25
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.346215, 0.938155, 0, -0.938155, -0.346215, 0.302422, 10.1927, -0.353454 )
@@ -164,6 +165,9 @@ transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612,
 [node name="Rocks5" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
 transform = Transform( 0.0230039, 0, 1.99987, 0, 2, 0, -1.99987, 0, 0.0230039, 5.96921, -0.210309, 12.3633 )
 
+[node name="Rocks9" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
+transform = Transform( -0.68873, 0, -1.87767, 0, 2, 0, 1.87767, 0, -0.68873, -4.38458, -0.210309, 27.7689 )
+
 [node name="Rocks6" parent="Navigation/NavigationMeshInstance/Environment" instance=ExtResource( 4 )]
 transform = Transform( 0.0575098, 0, 4.99967, 0, 5, 0, -4.99967, 0, 0.0575098, 72.9025, -0.551015, -24.5187 )
 
@@ -286,90 +290,149 @@ material = ExtResource( 9 )
 
 [node name="snake" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90354, -0.111936, -15.1137 )
-speed = 5
+speed = 6
 
 [node name="snake2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -6.14319, -0.111936, -10.3816 )
-speed = 5
+speed = 7
 
 [node name="snake19" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -38.0312, -0.111936, -2.75784 )
-speed = 5
+speed = 7
 
 [node name="snake20" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -54.404, -0.111936, 2.99596 )
-speed = 5
+speed = 7
 
 [node name="snake21" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -49.9506, -0.111936, 12.3465 )
-speed = 5
+speed = 7
 
 [node name="snake3" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -28.7902, -0.111934, 0.0069828 )
-speed = 5
+speed = 7
 
 [node name="snake4" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 33.8013, -0.111932, 24.0234 )
-speed = 5
+speed = 7
+
+[node name="snake22" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 18.3829, -0.111932, 31.9856 )
+speed = 7
+
+[node name="snake23" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 12.3493, -0.111932, 34.1337 )
+speed = 7
+
+[node name="snake24" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 20.5663, -0.111932, 35.6875 )
+speed = 7
+
+[node name="snake28" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -3.10351, -0.111932, 35.6875 )
+speed = 7
+
+[node name="snake25" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 24.183, -0.111932, 33.0136 )
+speed = 7
+
+[node name="snake26" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 27.1148, -0.111931, 28.1356 )
+speed = 7
+
+[node name="snake27" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 27.1148, -0.111931, 28.1356 )
+speed = 7
 
 [node name="snake18" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 48.6598, -0.111932, -7.72567 )
-speed = 5
+speed = 7
 
 [node name="snake5" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -33.1609, -0.111932, 24.0234 )
-speed = 5
+speed = 7
 
 [node name="snake17" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -12.2666, -0.111932, 24.0234 )
-speed = 5
+speed = 7
 
 [node name="snake6" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -33.1609, -0.111932, -16.0459 )
-speed = 5
+speed = 7
 
 [node name="snake7" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -53.7345, -0.111932, 24.0074 )
-speed = 5
+speed = 7
 
 [node name="snake8" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 41.1993, -0.111932, 20.584 )
-speed = 5
+speed = 7
 
 [node name="snake14" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 15.9709, -0.111932, 20.584 )
-speed = 5
+speed = 7
 
 [node name="snake15" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -1.12075, -0.111932, 13.8662 )
-speed = 5
+speed = 7
 
 [node name="snake16" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, -1.12075, -0.111932, 13.8662 )
-speed = 5
+speed = 7
 
 [node name="snake9" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 30.2973, -0.111932, -29.1635 )
-speed = 5
+speed = 7
 
 [node name="snake10" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 57.4465, -0.111932, 2.67484 )
-speed = 5
+speed = 7
 
 [node name="snake11" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 43.8299, -0.111932, 2.67484 )
-speed = 5
+speed = 7
 
 [node name="snake12" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 46.3732, -0.111932, 25.0926 )
-speed = 5
+speed = 7
+
+[node name="snake29" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 11.2652, -0.111932, 38.7472 )
+speed = 7
+
+[node name="snake30" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 9.18181, -0.111932, 38.7472 )
+speed = 7
+
+[node name="snake31" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 13.4726, -0.111932, 38.7472 )
+speed = 7
 
 [node name="snake13" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.798856, 0, -0.601522, 0, 1, 0, 0.601522, 0, 0.798856, 46.3645, -0.111932, 7.27375 )
-speed = 5
+speed = 7
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.944099, 143.655 )
 mesh = SubResource( 3 )
 material/0 = ExtResource( 10 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 20.0
+margin_right = 200.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_right = 400.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "32s"
+align = 1
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]
