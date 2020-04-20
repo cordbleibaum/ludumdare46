@@ -116,6 +116,9 @@ transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612,
 [node name="Plateau2" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 6.86618, -0.289103, -22.9409 )
 
+[node name="Plateau6" parent="Environment" instance=ExtResource( 5 )]
+transform = Transform( -2.73183, 0, 1.23979, 0, 3, 0, -1.23979, 0, -2.73183, -16.983, -0.289102, 2.04032 )
+
 [node name="Plateau5" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -1.82122, 0, 0.826528, 0, 2, 0, -0.826528, 0, -1.82122, 13.7876, -0.34699, 10.3324 )
 
@@ -130,4 +133,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45387, -0.167807, 26.4287 )
 
 [node name="Stone2" parent="Environment" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2924, -0.167807, 10.9798 )
+
+[node name="MarginCenter" type="MarginContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -30.0
+margin_right = 200.0
+margin_bottom = 30.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelStatus" type="Label" parent="MarginCenter"]
+margin_top = 23.0
+margin_right = 400.0
+margin_bottom = 37.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]

@@ -50,6 +50,7 @@ func movement(delta):
 	if is_on_floor() && Input.is_action_just_pressed("jump") && energy >= jumpEnergyConsumption:
 		velocity.y = jumpAcceleration * delta
 		energy -= jumpEnergyConsumption
+		anim.play("jump")	
 
 	var hv = velocity
 	hv.y = 0
@@ -59,7 +60,7 @@ func movement(delta):
 
 	if (dir.dot(hv) > 0):
 		accel = acceleration
-		
+	
 	if multiplier > 1 && new_pos.dot(new_pos) > 0.1:
 		anim.play("run")
 	elif new_pos.dot(new_pos) > 0.1:
