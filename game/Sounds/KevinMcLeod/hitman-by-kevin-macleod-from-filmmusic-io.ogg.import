@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hitman-by-kevin-macleod-from-filmmusic-io.ogg-9c4aa6cd4eedcc44f15453b0cb8828c6.oggstr"
+
+[deps]
+
+source_file="res://Sounds/KevinMcLeod/hitman-by-kevin-macleod-from-filmmusic-io.ogg"
+dest_files=[ "res://.import/hitman-by-kevin-macleod-from-filmmusic-io.ogg-9c4aa6cd4eedcc44f15453b0cb8828c6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
