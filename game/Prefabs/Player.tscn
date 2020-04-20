@@ -2166,7 +2166,7 @@ walkSpeed = 2.5
 sprintMultiplier = 3
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 2.56334, -2.41302 )
+transform = Transform( -1, 1.62921e-07, -2.82187e-07, 0, 0.866025, 0.5, 3.25841e-07, 0.5, -0.866025, 0, 1.84088, -2.05663 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
