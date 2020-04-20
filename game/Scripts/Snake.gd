@@ -2,6 +2,8 @@ extends KinematicBody
 
 export var speed = 3
 export var gravity = -9.81
+export var triggerDistance = 15
+export var gameoverDistance = 0.8
 
 var nav
 var player
@@ -14,17 +16,20 @@ func _ready():
 
 
 func _physics_process(delta):
-	var path = nav.get_simple_path(self.get_translation()+Vector3(0,0.5,0), player.get_translation())
-	
-	if path.size() > 0:
-		var nextPos = path[1]
-	
-		var movementTarget = (nextPos - transform.origin)
-		movementTarget = movementTarget.normalized() * speed
+	if GameVariables.gameState == GameVariables.GAMESTATE.running:
+		var path = nav.get_simple_path(self.get_translation()+Vector3(0,0.5,0), player.get_translation())
 		
-		velocity.x = movementTarget.x
-		velocity.z = movementTarget.z
-		velocity.y += gravity*delta*0.1
-	
-		velocity = move_and_slide(velocity, Vector3(0,1,0))
-		look_at(player.get_translation(), Vector3(0,1,0))
+		if path.size() > 0 && self.get_translation().distance_to(player.get_translation()) < triggerDistance:
+			var nextPos = path[1]
+		
+			var movementTarget = (nextPos - transform.origin)
+			movementTarget.y = 0;
+			movementTarget = movementTarget.normalized() * speed
+			
+			translation += movementTarget * delta
+			
+			look_at(player.get_translation(), Vector3(0,1,0))
+			
+			if self.get_translation().distance_to(player.get_translation()) < gameoverDistance:
+				GameVariables.loose()
+				get_parent().get_node("MarginCenter/LabelStatus").text = "You Lost!"

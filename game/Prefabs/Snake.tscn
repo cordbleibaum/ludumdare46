@@ -576,6 +576,7 @@ tracks/29/keys = PoolRealArray( 0, 1, 0, 0, 0, 4.64481e-27, -8.17124e-14, -5.684
 
 [node name="Snake" type="KinematicBody"]
 script = ExtResource( 3 )
+speed = 8
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.00348742, 0.0203542, -2.5481e-05 )
