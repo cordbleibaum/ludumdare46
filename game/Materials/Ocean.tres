@@ -1,0 +1,59 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode specular_toon;
+
+uniform sampler2D noise;
+uniform float alpha = 0.25;
+uniform float speed = 0.25;
+
+float wave(vec2 position){
+  position += texture(noise, position / 10.0).x * 2.0 - 1.0;
+  vec2 wv = 1.0 - abs(sin(position));
+  wv = (1.0 - alpha) * wv + alpha * abs(sin(position.x + position.y)) * 1.0;
+  return pow(1.0 - pow(wv.x * wv.y, 0.65), 4.0);
+}
+
+float height(vec2 position, float time) {
+	float d = wave((position + time) * 0.4) * 0.3;
+	d += wave((position - time) * 0.3) * 0.3;
+	d += wave((position + time) * 0.5) * 0.2;
+	d += wave((position - time) * 0.6) * 0.2;
+	return d;
+}
+
+varying float vertexHeight;
+void vertex() {
+	vec2 pos = VERTEX.xz;
+	float k = height(pos, TIME*speed);
+	VERTEX.y = k;
+	
+	NORMAL = normalize(vec3(k - height(pos + vec2(0.1, 0.0), TIME*speed), 0.1, k - height(pos + vec2(0.0, 0.1), TIME*speed)));
+	vertexHeight = abs(k - height(pos + vec2(0.1, 0.0), TIME*speed)) + abs(k - height(pos + vec2(0.0, 0.1), TIME*speed));
+}
+
+void fragment() {
+	float fresnel = sqrt(1.0 - dot(NORMAL, VIEW));
+	RIM = 0.2;
+	METALLIC = 0.0;
+	ROUGHNESS = 0.01 * (1.0 - fresnel);
+	float vH = clamp(0.0, 1.0, vertexHeight * 0.1);
+//	vH = 0.0;
+	ALBEDO = mix(vec3(0.015, 0.04, 0.175), vec3(1.0, 1.0, 1.0), vH*0.05);
+}"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+width = 1024
+height = 1024
+seamless = true
+bump_strength = 8.7
+noise = SubResource( 2 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/alpha = 0.25
+shader_param/speed = 0.25
+shader_param/noise = SubResource( 3 )
