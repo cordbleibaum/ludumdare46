@@ -35,3 +35,4 @@ func _physics_process(delta):
 			if self.get_translation().distance_to(player.get_translation()) < gameoverDistance:
 				GameVariables.loose()
 				get_parent().get_node("MarginCenter/LabelStatus").text = "You Lost!"
+				get_parent().get_node("HitPlayer").play()
