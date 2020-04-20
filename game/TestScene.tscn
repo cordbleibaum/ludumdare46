@@ -8,7 +8,7 @@
 [ext_resource path="res://Prefabs/Stone.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 19.3504, 1, 1 )
+extents = Vector3( 50, 1, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -57,72 +57,77 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.1025 )
 shape = SubResource( 1 )
 
-[node name="Palmtree" parent="." instance=ExtResource( 3 )]
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="Palmtree" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61317, -0.225305, -2.9539 )
 
-[node name="Palmtree7" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree7" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6477, -0.225305, -27.7935 )
 
-[node name="Palmtree2" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree2" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -9.90811, -0.0881631, -3.70795 )
 
-[node name="Palmtree6" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree6" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -8.44807, -0.225302, -19.4723 )
 
-[node name="Palmtree3" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree3" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 11.8468, -0.225303, -1.14617 )
 
-[node name="Palmtree8" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 23.8252, -0.225306, -3.42777 )
+[node name="Palmtree8" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, 28.6136, -0.225306, -0.793741 )
 
-[node name="Palmtree4" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree10" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( -0.68937, 0, -1.3322, 0, 1.5, 0, 1.3322, 0, -0.68937, -27.3751, -0.225306, -8.7555 )
+
+[node name="Palmtree4" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, -4.03317, -0.225303, 6.18687 )
 
-[node name="Palmtree5" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree5" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 12.9736, -0.225303, -18.1191 )
 
-[node name="Palmtree9" parent="." instance=ExtResource( 3 )]
+[node name="Palmtree9" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( -0.555237, 0, -0.831692, 0, 1, 0, 0.831692, 0, -0.555237, 29.9644, -0.225303, -17.1657 )
 
-[node name="Rocks" parent="." instance=ExtResource( 4 )]
+[node name="Rocks" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3225, -0.210316, -10.9 )
 
-[node name="Rocks2" parent="." instance=ExtResource( 4 )]
+[node name="Rocks2" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( 0.553028, 0, -0.833163, 0, 1, 0, 0.833163, 0, 0.553028, 9.09081, -0.210314, 21.5946 )
 
-[node name="Rocks3" parent="." instance=ExtResource( 4 )]
+[node name="Rocks3" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( -0.811666, 0, -0.584122, 0, 1, 0, 0.584122, 0, -0.811666, -14.577, -0.210314, 21.5946 )
 
-[node name="Rocks4" parent="." instance=ExtResource( 4 )]
+[node name="Rocks4" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 5.43209, -0.210314, -10.8096 )
 
-[node name="Rocks5" parent="." instance=ExtResource( 4 )]
+[node name="Rocks5" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( 0.0230039, 0, 1.99987, 0, 2, 0, -1.99987, 0, 0.0230039, 5.96921, -0.210309, 12.3633 )
 
-[node name="Rocks6" parent="." instance=ExtResource( 4 )]
+[node name="Rocks6" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( 0.0575098, 0, 4.99967, 0, 5, 0, -4.99967, 0, 0.0575098, 72.9025, -0.210307, -24.5187 )
 
-[node name="Rocks7" parent="." instance=ExtResource( 4 )]
+[node name="Rocks7" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( -4.98198, 0, -0.424127, 0, 5, 0, 0.424127, 0, -4.98198, 72.9025, -0.210307, -6.01923 )
 
-[node name="Plateau" parent="." instance=ExtResource( 5 )]
+[node name="Plateau" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.581666, -0.289103, -27.6682 )
 
-[node name="Plateau2" parent="." instance=ExtResource( 5 )]
+[node name="Plateau2" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 6.86618, -0.289103, -22.9409 )
 
-[node name="Plateau5" parent="." instance=ExtResource( 5 )]
+[node name="Plateau5" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -1.82122, 0, 0.826528, 0, 2, 0, -0.826528, 0, -1.82122, 13.7876, -0.34699, 10.3324 )
 
-[node name="Plateau3" parent="." instance=ExtResource( 5 )]
+[node name="Plateau3" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -0.263654, 0, 0.964617, 0, 1, 0, -0.964617, 0, -0.263654, -3.44582, -0.289104, -17.4107 )
 
-[node name="Plateau4" parent="." instance=ExtResource( 5 )]
+[node name="Plateau4" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( 0.868139, 0, 0.496322, 0, 1, 0, -0.496322, 0, 0.868139, -21.2909, -0.289104, 8.56355 )
 
-[node name="Stone" parent="." instance=ExtResource( 6 )]
+[node name="Stone" parent="Environment" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45387, -0.167807, 26.4287 )
 
-[node name="Stone2" parent="." instance=ExtResource( 6 )]
+[node name="Stone2" parent="Environment" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2924, -0.167807, 10.9798 )
 [connection signal="body_entered" from="WinningArea" to="WinningArea" method="_on_WinningArea_body_entered"]
