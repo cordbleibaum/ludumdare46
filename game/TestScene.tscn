@@ -18,7 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -33.6414 )
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.14888, 6.24517 )
 use_collision = true
-width = 200.0
+width = 400.0
 depth = 100.0
 
 [node name="CSGBox" type="CSGBox" parent="CSGBox"]
@@ -54,7 +54,7 @@ collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="WinningArea"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.1025 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97806, 0.766434, 18.4601 )
 shape = SubResource( 1 )
 
 [node name="Environment" type="Spatial" parent="."]
@@ -71,14 +71,23 @@ transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -
 [node name="Palmtree6" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -8.44807, -0.225302, -19.4723 )
 
+[node name="Palmtree12" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.326096, 0, 0.945337, 0, 1, 0, -0.945337, 0, 0.326096, -63.4758, -0.225302, -25.0702 )
+
 [node name="Palmtree3" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, 11.8468, -0.225303, -1.14617 )
 
 [node name="Palmtree8" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, 28.6136, -0.225306, -0.793741 )
 
+[node name="Palmtree13" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( 0.804359, 0, -1.2661, 0, 1.5, 0, 1.2661, 0, 0.804359, -73.3438, -0.225306, -13.9816 )
+
 [node name="Palmtree10" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( -0.68937, 0, -1.3322, 0, 1.5, 0, 1.3322, 0, -0.68937, -27.3751, -0.225306, -8.7555 )
+
+[node name="Palmtree11" parent="Environment" instance=ExtResource( 3 )]
+transform = Transform( -0.919161, 0, -1.77627, 0, 2, 0, 1.77627, 0, -0.919161, -75.7783, -0.225304, 6.33542 )
 
 [node name="Palmtree4" parent="Environment" instance=ExtResource( 3 )]
 transform = Transform( 0.536239, 0, -0.844066, 0, 1, 0, 0.844066, 0, 0.536239, -4.03317, -0.225303, 6.18687 )
@@ -105,16 +114,28 @@ transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612,
 transform = Transform( 0.0230039, 0, 1.99987, 0, 2, 0, -1.99987, 0, 0.0230039, 5.96921, -0.210309, 12.3633 )
 
 [node name="Rocks6" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 0.0575098, 0, 4.99967, 0, 5, 0, -4.99967, 0, 0.0575098, 72.9025, -0.210307, -24.5187 )
+transform = Transform( 0.0575098, 0, 4.99967, 0, 5, 0, -4.99967, 0, 0.0575098, 72.9025, -0.551015, -24.5187 )
 
 [node name="Rocks7" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( -4.98198, 0, -0.424127, 0, 5, 0, 0.424127, 0, -4.98198, 72.9025, -0.210307, -6.01923 )
+transform = Transform( -4.98198, 0, -0.424127, 0, 5, 0, 0.424127, 0, -4.98198, -50.8255, -0.609678, -6.01923 )
 
 [node name="Plateau" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, -0.581666, -0.289103, -27.6682 )
 
 [node name="Plateau2" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -0.910612, 0, 0.413264, 0, 1, 0, -0.413264, 0, -0.910612, 6.86618, -0.289103, -22.9409 )
+
+[node name="Plateau7" parent="Environment" instance=ExtResource( 5 )]
+transform = Transform( 9.4626, 0, -3.23406, 0, 10, 0, 3.23406, 0, 9.4626, 0, 0, -53.0523 )
+
+[node name="Plateau8" parent="Environment" instance=ExtResource( 5 )]
+transform = Transform( 9.99937, 0, 0.112222, 0, 10, 0, -0.112222, 0, 9.99937, 25.0682, 0, -55.4231 )
+
+[node name="Plateau9" parent="Environment" instance=ExtResource( 5 )]
+transform = Transform( 9.51143, 0, -3.08751, 0, 10, 0, 3.08751, 0, 9.51143, 44.5695, 0, -55.4941 )
+
+[node name="Plateau10" parent="Environment" instance=ExtResource( 5 )]
+transform = Transform( 7.12602, 0, 7.01569, 0, 10, 0, -7.01569, 0, 7.12602, 67.2375, 0, -50.5878 )
 
 [node name="Plateau6" parent="Environment" instance=ExtResource( 5 )]
 transform = Transform( -2.73183, 0, 1.23979, 0, 3, 0, -1.23979, 0, -2.73183, -16.983, -0.289102, 2.04032 )
